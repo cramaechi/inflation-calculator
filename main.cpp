@@ -13,38 +13,38 @@ void clearScreen();
 
 int main(int argc, char* argv[])
 {
-	char ans;
-	do
-	{
-		double pPrice, cPrice;
+    char ans;
+    do
+    {
+        double pPrice, cPrice;
 
-		cout<<"Enter the price of a random item from one year ago and today: ";
-		cin>>pPrice;
-		cin>>cPrice;
-		cout<<endl;
-		cout<<"The inflation rate for the past year is ";
-		cout.setf(ios::showpoint);
-		cout.setf(ios::fixed);
-		cout.precision(1);
-		cout<<computeInflationRate(pPrice, cPrice)<<"%\n\n";
-		cout<<"Start over? (y/n): ";
-		cin>>ans;
-		
-		if(ans == 'Y' || ans == 'y')
-			clearScreen();
-	}while(ans == 'Y' || ans == 'y');
+        cout<<"Enter the price of a random item from one year ago and today: ";
+        cin>>pPrice;
+        cin>>cPrice;
+        cout<<endl;
+        cout<<"The inflation rate for the past year is ";
+        cout.setf(ios::showpoint);
+        cout.setf(ios::fixed);
+        cout.precision(1);
+        cout<<computeInflationRate(pPrice, cPrice)<<"%\n\n";
+        cout<<"Start over? (y/n): ";
+        cin>>ans;
 
-	return 0;
+        if(ans == 'Y' || ans == 'y')
+            clearScreen();
+    }while(ans == 'Y' || ans == 'y');
+
+    return 0;
 }
 
 double computeInflationRate(double pPrice, double cPrice)
 {
-	double iR = ((cPrice - pPrice)/pPrice);
+    double iR = ((cPrice - pPrice)/pPrice);
 
-	return iR;
+    return iR;
 }
 
 void clearScreen()
 {
-	cout<<"\n\n";
+    cout<<"\n\n";
 }
